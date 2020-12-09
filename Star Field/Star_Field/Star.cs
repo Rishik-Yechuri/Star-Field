@@ -23,7 +23,10 @@ namespace Star_Field
         {
             texture = cm.Load<Texture2D>("Star");
             rectangle = new Rectangle();
-            color = Color.White;
+            int randomR = rnd.Next(256);
+            int randomG = rnd.Next(256);
+            int randomB = rnd.Next(256);
+            color = new Color(randomR, randomG, randomB);
             //Positions are given randomly
             xPos = rnd.Next(width);
             yPos = rnd.Next(height);
@@ -34,7 +37,7 @@ namespace Star_Field
             else
                 multiple = 1;
             //Speed is also given randomly
-            speedx = rnd.NextDouble() * multiple;
+            speedx = rnd.Next(3) * multiple;
             if (rnd.Next(2) == 1)
                 multiple = -1;
             else
